@@ -6,7 +6,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #12142d;
+  background: #425c5a;
   font-size: 16px;
   color: #222;
   font-family: "Roboto", sans-serif;
@@ -38,6 +38,7 @@ h1 {
   font-weight: 300;
   font-size: 28px;
   color: white;
+  font-weight: bold;
 }
 
 input[type="text"],
