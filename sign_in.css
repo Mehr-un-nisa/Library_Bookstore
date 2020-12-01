@@ -18,8 +18,8 @@ body {
   margin: 5% auto;
   width: 600px;
   height: 400px;
-  background: #fff;
-  border-radius: 2px;
+
+  border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -37,6 +37,7 @@ h1 {
   margin: 0 0 20px 0;
   font-weight: 300;
   font-size: 28px;
+  color: white;
 }
 
 input[type="text"],
@@ -64,9 +65,10 @@ input[type="password"]:focus {
 
 input[type="submit"] {
   margin-top: 28px;
+  margin-left: 182px;
   width: 120px;
   height: 32px;
-  background: #16a085;
+  background: #58595b;
   border: none;
   border-radius: 2px;
   color: #fff;
@@ -85,8 +87,7 @@ input[type="submit"]:focus {
 }
 
 input[type="submit"]:active {
-  opacity: 1;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  color: white;
   transition: 0.1s ease;
 }
 
@@ -127,8 +128,8 @@ input[type="submit"]:active {
 
 button.social-signin {
   margin-bottom: 20px;
+
   width: 220px;
-  height: 36px;
   border: none;
   border-radius: 2px;
   color: #fff;
@@ -138,28 +139,10 @@ button.social-signin {
   cursor: pointer;
 }
 
-button.social-signin:hover,
-button.social-signin:focus {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease;
-}
-
-button.social-signin:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease;
-}
-
-button.social-signin.facebook {
-  background: #32508e;
-}
-
-button.social-signin.twitter {
-  background: #55acee;
-}
-
-button.social-signin.google {
-  background: #dd4b39;
-}
 .heading {
   text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 40px;
 }
