@@ -160,3 +160,6 @@ button.social-signin.twitter {
 button.social-signin.google {
   background: #dd4b39;
 }
+.heading {
+  text-align: center;
+}
