@@ -9,7 +9,7 @@ body {
   background: #425c5a;
   font-size: 16px;
   color: #222;
-  font-family: "Roboto", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
 }
 
@@ -26,7 +26,6 @@ body {
 .left {
   position: absolute;
   top: 0;
-  left: 0;
   box-sizing: border-box;
   padding: 40px;
   width: 300px;
@@ -106,9 +105,14 @@ button.social-signin {
 }
 
 .heading {
+  color: #ffffff;
   text-align: center;
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 40px;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #425C5A;
+  padding: 24px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
