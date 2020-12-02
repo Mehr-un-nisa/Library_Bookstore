@@ -50,6 +50,7 @@ h1 {
   font-weight: 300;
   font-size: 28px;
   padding-top: 0.5em;
+  padding-bottom: 1.25em;
   text-align: center;
 }
 
@@ -62,7 +63,7 @@ input[type="text"]{
   height: 32px;
   border: none;
   border-bottom: 1px solid #aaa;
-  font-family: "Roboto", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 15px;
   transition: 0.2s ease;
@@ -82,7 +83,7 @@ input[type="submit"] {
   border: none;
   border-radius: 2px;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   transition: 0.1s ease;
@@ -109,7 +110,7 @@ button.social-signin {
   border: none;
   border-radius: 2px;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   transition: 0.2s ease;
   cursor: pointer;
