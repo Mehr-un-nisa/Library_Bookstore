@@ -88,7 +88,7 @@ input[type="submit"]:focus {
 }
 
 input[type="submit"]:active {
-  color: white;
+  color: whitesmoke;
   transition: 0.1s ease;
 }
 
