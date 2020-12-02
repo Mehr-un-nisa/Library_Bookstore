@@ -65,11 +65,11 @@ input[type="password"]:focus {
 }
 
 input[type="submit"] {
-  margin-top: 28px;
+  margin-top: 20px;
   margin-left: 182px;
   width: 120px;
   height: 32px;
-  background: #58595b;
+  background: #a2bfbd;
   border: none;
   border-radius: 2px;
   color: #fff;
