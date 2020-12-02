@@ -91,41 +91,6 @@ input[type="submit"]:active {
   transition: 0.1s ease;
 }
 
-.or {
-  position: absolute;
-  top: 180px;
-  left: 280px;
-  width: 40px;
-  height: 40px;
-  background: #ddd;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  line-height: 40px;
-  text-align: center;
-}
-
-.right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  box-sizing: border-box;
-  padding: 40px;
-  width: 300px;
-  height: 400px;
-  background: url("https://goo.gl/YbktSj");
-  background-size: cover;
-  background-position: center;
-  border-radius: 0 2px 2px 0;
-}
-
-.right .loginwith {
-  display: block;
-  margin-bottom: 40px;
-  font-size: 28px;
-  color: #fff;
-  text-align: center;
-}
-
 button.social-signin {
   margin-bottom: 20px;
 
@@ -144,7 +109,7 @@ button.social-signin {
   text-align: center;
   overflow: hidden;
   border-radius: 2px;
-  background-color: #425C5A;
+  background-color: #425c5a;
   padding: 24px 16px;
   text-decoration: none;
   font-size: 30px;
