@@ -33,11 +33,11 @@ nav .logo{
   color: white;
 }
 
-#buyer-box {
+#log-in {
   position: relative;
   margin: 5% auto;
   width: 600px;
-  height: 700px;
+  height: 750px;
   left: 3%;
   margin-top: 12%;
   border: black;
@@ -85,8 +85,33 @@ input[type="text"]:focus{
   transition: 0.2s ease;
 }
 
+
+
+
+
+input[type="password"]{
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="password"]:focus{
+  border-bottom: 2px solid #4e4e4e;
+  color: #000000;
+  transition: 0.2s ease;
+}
+
 input[type="submit"] {
-  margin-top: 10%;
+  margin-top: 28px;
   width: 80%;
   height: 15%;
   background: black;

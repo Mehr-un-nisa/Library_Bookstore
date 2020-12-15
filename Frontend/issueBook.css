@@ -4,24 +4,47 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background: #ffffff;
   font-size: 16px;
   color: rgb(0, 0, 0);
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
+nav{
+  width: 1149px;
+  position: absolute;
+  height: 85px;  
+  background: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  top: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+nav .logo{
+  font-size: 40px;
+  margin-right:38%;
+  font-weight: 700;
+  color: white;
+}
 
 #buyer-box {
   position: relative;
   margin: 5% auto;
   width: 600px;
-  height: 800px;
+  height: 700px;
+  left: 3%;
+  margin-top: 12%;
   border: black;
   background: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  border-bottom: black;
 }
 
 .input-data {
@@ -35,7 +58,6 @@ body {
 }
 
 h1 {
-  margin: 0 0 20px 0;
   font-weight: 300;
   font-size: 28px;
   padding-top: 2em;
@@ -58,31 +80,33 @@ input[type="text"]{
 }
 
 input[type="text"]:focus{
-  border-bottom: 2px solid #A2BFBD;
-  color: #A2BFBD;
+  border-bottom: 2px solid #4e4e4e;
+  color: #000000;
   transition: 0.2s ease;
 }
 
 input[type="submit"] {
   margin-top: 28px;
-  width: 120px;
-  height: 32px;
-  background: #425C5A;
+  width: 80%;
+  height: 15%;
+  background: black;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
+  margin-bottom: 5%;
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-  opacity: 0.8;
+  opacity: 0.7;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
+  font-size: 14px;
 }
 
 input[type="submit"]:active {
@@ -91,76 +115,6 @@ input[type="submit"]:active {
   transition: 0.1s ease;
 }
 
-.or {
-  position: absolute;
-  top: 180px;
-  left: 280px;
-  width: 40px;
-  height: 40px;
-  background: #ddd;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  line-height: 40px;
-  text-align: center;
-}
-
-.right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  box-sizing: border-box;
-  padding: 40px;
-  width: 300px;
-  height: 400px;
-  background: url("https://goo.gl/YbktSj");
-  background-size: cover;
-  background-position: center;
-  border-radius: 0 2px 2px 0;
-}
-
-.right .loginwith {
-  display: block;
-  margin-bottom: 40px;
-  font-size: 28px;
-  color: #fff;
-  text-align: center;
-}
-
-button.social-signin {
-  margin-bottom: 20px;
-  width: 220px;
-  height: 36px;
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  transition: 0.2s ease;
-  cursor: pointer;
-}
-
-button.social-signin:hover,
-button.social-signin:focus {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease;
-}
-
-button.social-signin:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease;
-}
-
-button.social-signin.facebook {
-  background: #32508e;
-}
-
-button.social-signin.twitter {
-  background: #55acee;
-}
-
-button.social-signin.google {
-  background: #dd4b39;
-}
 .heading {
   text-align: center;
 }

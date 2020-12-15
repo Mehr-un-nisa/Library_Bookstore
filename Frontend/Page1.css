@@ -34,12 +34,11 @@ nav .logo{
 }
 
 #buyer-box {
-  position: relative;
-  margin: 5% auto;
+  position: absolute;
+  left: 30%;
+  top: 20%;
   width: 600px;
-  height: 700px;
-  left: 3%;
-  margin-top: 12%;
+  height: 100%;
   border: black;
   background: #fff;
   border-radius: 2px;
@@ -86,7 +85,7 @@ input[type="text"]:focus{
 }
 
 input[type="submit"] {
-  margin-top: 10%;
+  margin-top: 28px;
   width: 80%;
   height: 15%;
   background: black;
