@@ -26,9 +26,6 @@ nav{
   padding: 0 100px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
-nav .menu-icon{
-  margin-left: 30px;
-}
 nav form{
   height: 40px;
   width: 42%;
@@ -97,7 +94,7 @@ nav .loginbtn:active, .joinbtn:active{
     transition: 0.1s ease;
 }
 nav .buttons{
-  margin-left: -80%;
+  margin-left: -68%;
   margin-right: -3%;
 }
 input[type="submit"] {
@@ -194,9 +191,9 @@ input[type="submit"] {
   font-weight: 300;
 }
 .heading-image-grid{
-  padding-left: 4%;
+  padding-left: 6%;
   color: black;
-  padding-top: 36%;
+  padding-top: 30%;
 }
 .web-op{
   color: #fff;
@@ -247,13 +244,13 @@ input[type="submit"] {
 }
 
 .c-grid {
-  padding: 40px 20px;
+  padding: 40px 40px;
   display: flex;
 }
 
 .c-grid__item {
   flex-basis: 100%;
-  margin: 0 20px;
+  margin: 0 35px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
