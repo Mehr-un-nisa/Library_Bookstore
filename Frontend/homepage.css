@@ -134,13 +134,14 @@ input[type="submit"] {
 }
 .page1 .hp-text1{
   position: absolute;
-  left: 19%;
+  left: 17%;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 700;
   line-height: 57px;
   color: #ffffff;
+  margin-top: 5%;
 }
 
 .input-icons i { 
