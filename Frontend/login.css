@@ -37,7 +37,7 @@ nav .logo{
   position: relative;
   margin: 5% auto;
   width: 600px;
-  height: 750px;
+  height: 500px;
   left: 3%;
   margin-top: 12%;
   border: black;
@@ -46,7 +46,6 @@ nav .logo{
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   border-bottom: black;
 }
-
 .input-data {
   position: absolute;
   top: 2em;
@@ -62,6 +61,14 @@ h1 {
   font-size: 28px;
   padding-top: 2em;
   text-align: center;
+}
+
+.input-data h1 {
+  font-weight: 300;
+  font-size: 28px;
+  padding-top: 15%;
+  padding-bottom: 5%;
+  margin-left: -25%;
 }
 
 input[type="text"]{

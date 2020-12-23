@@ -82,6 +82,10 @@ nav .loginbtn{
     cursor: pointer;
     margin-left: 10px;
 }
+nav .loginbtn a{
+  text-decoration: none;
+  color: black;
+}
 nav .loginbtn:hover, .loginbtn:focus,
 .joinbtn:hover, .joinbtn:focus{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
