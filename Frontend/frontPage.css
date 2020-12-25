@@ -201,11 +201,11 @@ input[type="submit"]:active {
 .intro h1{
   text-align: left;
   margin-left:6%;
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 500;
 }
 .intro p{
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 100;
   margin-left: 6%;
   margin-right: 8%;
