@@ -193,5 +193,22 @@ input[type="submit"]:active {
 .heading1{
   margin-top: -3%;
   margin-left: -20%;
-  
+}
+.intro{
+  color: #fff;
+  margin-top: -35%;
+}
+.intro h1{
+  text-align: left;
+  margin-left:6%;
+  font-size: 56px;
+  font-weight: 500;
+}
+.intro p{
+  font-size: 22px;
+  font-weight: 100;
+  margin-left: 6%;
+  margin-right: 8%;
+  line-height: 180%;
+
 }
