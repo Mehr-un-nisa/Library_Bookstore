@@ -10,10 +10,10 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
-nav{
+nav {
   width: 1149px;
   position: absolute;
-  height: 85px;  
+  height: 85px;
   background: black;
   display: flex;
   flex-wrap: wrap;
@@ -26,9 +26,9 @@ nav{
   right: 0%;
 }
 
-nav .logo{
+nav .logo {
   font-size: 40px;
-  margin-right:38%;
+  margin-right: 38%;
   font-weight: 700;
   color: white;
 }
@@ -71,7 +71,7 @@ h1 {
   margin-left: -25%;
 }
 
-input[type="text"]{
+input[type="text"] {
   display: block;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -86,17 +86,13 @@ input[type="text"]{
   transition: 0.2s ease;
 }
 
-input[type="text"]:focus{
+input[type="text"]:focus {
   border-bottom: 2px solid #4e4e4e;
   color: #000000;
   transition: 0.2s ease;
 }
 
-
-
-
-
-input[type="password"]{
+input[type="password"] {
   display: block;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -111,7 +107,7 @@ input[type="password"]{
   transition: 0.2s ease;
 }
 
-input[type="password"]:focus{
+input[type="password"]:focus {
   border-bottom: 2px solid #4e4e4e;
   color: #000000;
   transition: 0.2s ease;

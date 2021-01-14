@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #042331;
+  transition: all 0.5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  background: #063146;
+  user-select: none;
+}
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-top: 3px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid black;
+  transition: 0.4s;
+}
+ul li:hover {
+  padding-left: 30px;
+}
+#check {
+  display: none;
+}
+label #btn,
+label #cancel {
+  position: absolute;
+  cursor: pointer;
+  background: #042331;
+  border-radius: 3px;
+}
+label #btn {
+  left: 40px;
+  top: 57px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all 0.5s;
+}
+label #cancel {
+  z-index: 1111;
+  left: -195px;
+  top: 73px;
+  font-size: 30px;
+  color: white;
+  padding: 4px 9px;
+  transition: all 0.5s ease;
+}
+#check:checked ~ .sidebar {
+  left: 0;
+}
+#check:checked ~ label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel {
+  left: 211px;
+}
+section {
+  background: url(https://images.unsplash.com/photo-1502485019198-a625bd53ceb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+#check:checked ~ section {
+  margin-left: 250px;
+  transition: all 0.5s ease;
+}
+
+.hp-text1 {
+  position: absolute;
+  left: 26%;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 57px;
+  color: #ffffff;
+  margin-top: 5%;
+}
+.intro {
+  position: absolute;
+  left: 24%;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 50px;
+  color: #ffffff;
+  margin-top: 15%;
+}
