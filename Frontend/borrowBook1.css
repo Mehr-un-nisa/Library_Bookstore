@@ -5,6 +5,7 @@
 
 body {
   background: #e2e1e1;
+
   font-size: 16px;
   color: rgb(0, 0, 0);
   font-family: "Roboto", sans-serif;
@@ -46,19 +47,12 @@ nav .logo {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   border-bottom: black;
 }
-.book-style img {
-  width: 20%;
-  margin-top: -12%;
-  margin-left: 5%;
-  border: 2px solid black;
-  box-shadow: 6px 6px 7px rgb(194, 194, 194);
-}
 
 .book-style h1 {
   font-weight: 500;
   font-size: 28px;
   padding-top: 2em;
-  margin-left: 10%;
+
   text-align: center;
 }
 .book-style p {
@@ -88,19 +82,18 @@ nav .logo {
 }
 
 input[type="submit"] {
-  width: 40%;
+  width: 50%;
   height: 15%;
   background: black;
   border: none;
   border-radius: 5px;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 800;
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
   margin-top: 30%;
-  margin-right: 9%;
 }
 
 input[type="submit"]:hover,
@@ -115,4 +108,11 @@ input[type="submit"]:active {
   opacity: 1;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
+}
+.book-style img {
+  background-image: url(src/images/libraryBook.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  left: 0px;
 }
