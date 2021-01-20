@@ -9,7 +9,7 @@ body {
     color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    background-image: url(https://archives.gov.pk/img/features/Pages/library.jpg);
+    background-image: url("../src/images/library-grey.jpg");
 }
 
 nav {
