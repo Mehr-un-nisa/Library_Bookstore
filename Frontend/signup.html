@@ -1,8 +1,11 @@
 <!DOCTYPE html>
   <head>
     <title>Online Library | Bookstore</title>
+   <script type="text/javascript" src="js/signup.js"></script>
   </head>
   <body>
+ 
+
     <nav>
       <div class="menu-icon">
         </div>
@@ -15,15 +18,19 @@
             <div class="input-data">
               <h1>Sign Up</h1>
               <link rel="stylesheet" href="signup.css" />
-              <input type="text" name="username" placeholder="Username" />
-              <input type="text" name="username" placeholder="Email Address" />
-              <input type="password" name="password" placeholder="Password" />
-              <input type="password" name="password" placeholder="Confirm Password" />
-              <a href="homepage.html">
-                <input type="submit" name="signup" value="Sign Me Up" />
-              </a>
+           
+                <input type="text" name="username" placeholder="Username" required/>
+                <input type="email" name="email" placeholder="Email_Address" required/>
+                <input type="password" name="password" placeholder="Password" required/>
+                
+             <a href="homepage.html">
+               <button onclick="datavalidation()">Sign me up</button>
+                  <!-- <input type="submit" onclick="datavalidation()"  name="signup" value="Sign Me Up" /> -->
+                </a>
             </div>
           </div>
      </div>
+     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
   </body>
 </html>
