@@ -41,13 +41,14 @@
 
     <script id="MainScript">
         var firebaseConfig = {
-            apiKey: "AIzaSyCBFUUlODP-Ed17pckn3g91mdIFbMFWb4U",
-            authDomain: "book-store-system-8a3fa.firebaseapp.com",
-            projectId: "book-store-system-8a3fa",
-            storageBucket: "book-store-system-8a3fa.appspot.com",
-            messagingSenderId: "546010298597",
-            appId: "1:546010298597:web:e6359cd0e98121750bfc0c"
-        };
+    apiKey: "AIzaSyAXje3ztxorvM73LYVy72EgjScC-leZwS0",
+    authDomain: "bookstore-library.firebaseapp.com",
+    databaseURL: "https://bookstore-library-default-rtdb.firebaseio.com",
+    projectId: "bookstore-library",
+    storageBucket: "bookstore-library.appspot.com",
+    messagingSenderId: "170904053822",
+    appId: "1:170904053822:web:a237db1616d9b4c128496f"
+  };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
@@ -62,31 +63,31 @@
             error_message.style.padding = "10px";
         }
 
-        function validate() {
-            var text;
-            if (nameV.length < 5) {
-                text = "Please Enter valid Name";
-                error_message.innerHTML = text;
-                return false;
-            }
-            if (emailV.indexOf("@") == -1 || email.length < 6) {
-                text = "Please Enter valid Email";
-                error_message.innerHTML = text;
-                return false;
-            }
-            if (passV.length <= 5) {
-                text = "Please Enter More Than 5 Characters";
-                error_message.innerHTML = text;
-                return false;
-            }
-            alert("Form Submitted Successfully!");
-            return true;
-        }
+        // function validate() {
+        //     var text;
+        //     if (nameV.length < 5) {
+        //         text = "Please Enter valid Name";
+        //         error_message.innerHTML = text;
+        //         return false;
+        //     }
+        //     if (emailV.indexOf("@") == -1 || email.length < 6) {
+        //         text = "Please Enter valid Email";
+        //         error_message.innerHTML = text;
+        //         return false;
+        //     }
+        //     if (passV.length <= 5) {
+        //         text = "Please Enter More Than 5 Characters";
+        //         error_message.innerHTML = text;
+        //         return false;
+        //     }
+        //     alert("Form Submitted Successfully!");
+        //     return true;
+        // }
 
 
         document.getElementById('insert').onclick = function() {
             Ready();
-            validate();
+            // validate();
             firebase.database().ref('student/' + nameV).set({
                 NameOfUser: nameV,
                 Email: emailV,
