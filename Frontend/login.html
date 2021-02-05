@@ -1,31 +1,41 @@
 <!DOCTYPE html>
+<html>
   <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Online Library | Bookstore</title>
-
-    <script src="bookstore.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="login.css" /> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css"
+    />
   </head>
   <body>
+    <script src="firebase.js"></script>
+    <script src="login.js"></script>
+   
     <nav>
       <div class="menu-icon">
         </div>
         <div class="logo">Digital Library</div>    
-    </nav>
+    </nav> 
     <div id="id01" class="modal">
      
         <link rel="stylesheet" href="login.css" />
-          <div id="log-in">
-            <h1 class="heading">Online Library and Bookstore</h1>
-            <div class="input-data">
-              <h1>Log in</h1>
-              <input type="text" name="username" placeholder="Username" />
-              <input type="password" name="password" placeholder="Password" />
-              <a href="homepage.html">
-                <input type="submit" name="log_in" value="Log In"  />
-              </a>
+         
+             
+              <div id="firebaseui-auth-container"></div>
+            
             </div>
           </div>
-      <!--  </span> -->
-      </div>
-  
+        </span>
+      </div> 
+
+
   </body>
 </html>

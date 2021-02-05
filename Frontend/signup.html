@@ -1,102 +1,84 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Online Library | Bookstore</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <script src="firebase.js" ></script>
+    <script src="signup.js" ></script>
     <nav>
-        <div class="menu-icon">
-        </div>
-        <div class="logo">Digital Library</div>
-    </nav>
-    <div id="error_message">
+          <div class="menu-icon">
+          </div>
+          <div class="logo">Digital Library</div>
+      </nav>
+      <div id="error_message">
 
-    </div>
-    <div id="id01" class="modal">
-        <div id="Sign-in">
-            <h1 class="heading">Online Library and Bookstore</h1>
-            <div class="input-data">
-                <h1>Sign Up</h1>
-                <link rel="stylesheet" href="signup.css" />
-                <input id="namebox" type="text" placeholder="Username"></input>
-                <input id="emailbox" type="email" placeholder="Email Address"></input>
-                <input id="passwordbox" type="password" placeholder="Password"></input>
-                <input id="confirmbox" type="password" placeholder="Confirm Password"></input>
-                <!-- <a href="homepage.html"> -->
-                    <!-- <button id="insert" type="submit" onclick="location.href='homepage.html'">Sign me up</button> -->
-                    
-            <input id="insert" type="submit"  name="signup"  value="Sign Me Up" /> 
-            
-            </div>
-        </div>
-    </div>
-
-    <!-- onclick="document.getElementById('id01').style.display='none'" -->
+      </div>
+      <div id="id01" class="modal">
+          <div id="Sign-in">
+              <h1 class="heading">Online Library and Bookstore</h1>
+              <div class="input-data">
+                  <h1>Sign Up</h1>
+                  <link rel="stylesheet" href="signup.css" />
 
 
+                   <!-- <form  method="POST">   -->
+                  <input id="namebox" type="text" placeholder="Username"></input>
+                  <input id="emailbox" type="email" placeholder="Email Address"></input>
+                  <input id="passwordbox" type="password" placeholder="Password"></input>
+                  <input id="confirmbox" type="password" placeholder="Confirm Password"></input>
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+              <input id="insert" type="submit" name="signup"  value="Sign Me Up" />
+
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+      <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js">
+    </script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
 
-
-
     <script id="MainScript">
-        var firebaseConfig = {
-    apiKey: "AIzaSyAXje3ztxorvM73LYVy72EgjScC-leZwS0",
-    authDomain: "bookstore-library.firebaseapp.com",
-    databaseURL: "https://bookstore-library-default-rtdb.firebaseio.com",
-    projectId: "bookstore-library",
-    storageBucket: "bookstore-library.appspot.com",
-    messagingSenderId: "170904053822",
-    appId: "1:170904053822:web:a237db1616d9b4c128496f"
-  };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+     
+     
+
+      var nameV, emailV, passV, error_message;
+
+      function Ready() {
+        nameV = document.getElementById("namebox").value;
+        emailV = document.getElementById("emailbox").value;
+        passV = document.getElementById("passwordbox").value;
+        error_message = document.getElementById("error_message");
+        error_message.style.padding = "10px";
+      }
 
 
-        var nameV, emailV, passV, error_message;
-
-        function Ready() {
-            nameV = document.getElementById('namebox').value;
-            emailV = document.getElementById('emailbox').value;
-            passV = document.getElementById('passwordbox').value;
-            error_message = document.getElementById("error_message");
-            error_message.style.padding = "10px";
-        }
-
-        // function validate() {
-        //     var text;
-        //     if (nameV.length < 5) {
-        //         text = "Please Enter valid Name";
-        //         error_message.innerHTML = text;
-        //         return false;
-        //     }
-        //     if (emailV.indexOf("@") == -1 || email.length < 6) {
-        //         text = "Please Enter valid Email";
-        //         error_message.innerHTML = text;
-        //         return false;
-        //     }
-        //     if (passV.length <= 5) {
-        //         text = "Please Enter More Than 5 Characters";
-        //         error_message.innerHTML = text;
-        //         return false;
-        //     }
-        //     alert("Form Submitted Successfully!");
-        //     return true;
-        // }
-
-
-        document.getElementById('insert').onclick = function() {
-            Ready();
-            // validate();
-            firebase.database().ref('student/' + nameV).set({
-                NameOfUser: nameV,
-                Email: emailV,
-                Password: passV,
-
+      document.getElementById("insert").onclick = async function () {
+        Ready();
+        // validate();
+        console.log("Storing Data...");
+        try {
+          const result = await firebase
+            .database()
+            .ref("student/" + nameV)
+            .set({
+              NameOfUser: nameV,
+              Email: emailV,
+              Password: passV,
             });
+
+          console.log("done");
+          window.location.replace = "homepage.html";
+        } catch (error) {
+          console.log(error);
         }
+      };
     </script>
+  </body>
+</html>
