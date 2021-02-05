@@ -23,7 +23,7 @@
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ],
     // Terms of service url.
-    tosUrl: "main.html",
+    tosUrl: "homepage.html",
     // Privacy policy url.
     // privacyPolicyUrl: "<your-privacy-policy-url>",
   };
