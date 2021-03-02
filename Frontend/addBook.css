@@ -89,7 +89,8 @@ input[type="text"]:focus {
 
 input[type="submit"] {
     margin-top: 6%;
-    width: 80%;
+    margin-right: 8%;
+    width: 40%;
     height: 15%;
     background: black;
     border: none;
@@ -101,6 +102,10 @@ input[type="submit"] {
     transition: 0.1s ease;
     cursor: pointer;
     margin-bottom: 3%;
+}
+
+#back_btn{
+    margin-left: 65px;
 }
 
 input[type="submit"]:hover,
