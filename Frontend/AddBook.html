@@ -16,12 +16,16 @@
       <div class="input-data">
         <h1>Add Book</h1>
         <link rel="stylesheet" href="addBook.css" />
-        <input type="text" name="book_id" placeholder="Book ID" />
-        <input type="text" name="book_title" placeholder="Book Title" />
-        <input type="text" name="author" placeholder="Author name" />
-        <input type="text" name="price" placeholder="Book Price" />
-        <a href="bookadded.html">
-          <input type="submit" name="Add_book" value="Add Book" />
+        
+        <input id="book_id1" type="text"  placeholder="Book ID" />
+    <input id="book_title1" type="text" placeholder="Book Title" />
+    <input id="author_name1" type="text" placeholder="Author name" />
+    <input id="book_price1" type="text" placeholder="Book Price" />
+    
+    <input id="insert" type="submit" name="Add_book" value="Add Book" />
+
+        <a href="bookadded.html">      
+          <input id="input" type="submit" name="Add_book" value="Done" />
         </a>
         <a href="adminManageBooks.html">
           <input type="submit" name="back" value="Back" />
@@ -30,5 +34,44 @@
 
       <div class="right"></div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+    <script id="mainScript">
+       var firebaseConfig = {
+      apiKey: "AIzaSyDHJ_-ZQYPFVq7-NtsJXXMFKnga9dxGpVM",
+      authDomain: "library-20343.firebaseapp.com",
+      databaseURL: "https://library-20343-default-rtdb.firebaseio.com",
+      projectId: "library-20343",
+      storageBucket: "library-20343.appspot.com",
+      messagingSenderId: "212815264632",
+      appId: "1:212815264632:web:a934e86c5eb179e911e68d",
+      measurementId: "G-9EELX46W32"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+      var bookID, bookTITLE, authorNAME, bookPRICE;
+      
+      function ready() {
+        bookID = document.getElementById('book_id1').value;
+        bookTITLE = document.getElementById('book_title1').value;
+        authorNAME = document.getElementById('author_name1').value;
+        bookPRICE = document.getElementById('book_price1').value;
+      }
+
+      document.getElementById('insert').onclick = function () {
+        ready();
+        firebase.database().ref('AddBook/'+bookID).set({
+          bookId: bookID,
+          bookTitle: bookTITLE,
+          AuthorNAme: authorNAME,
+          BookPrice: bookPRICE
+        });
+      }
+      
+    </script>    
+
   </body>
 </html>
