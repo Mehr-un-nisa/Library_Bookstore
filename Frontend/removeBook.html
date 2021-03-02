@@ -14,16 +14,12 @@
     <div id="buyer-box">
       <h1 class="heading">Online Library and Bookstore</h1>
       <div class="input-data">
-        <h1>Add Book</h1>
-        <link rel="stylesheet" href="addBook.css" />
+        <h1>Remove Book</h1>
+        <link rel="stylesheet" href="removeBook.css" />
         
         <input id="book_id1" type="text"  placeholder="Book ID" />
-        <input id="book_title1" type="text" placeholder="Book Title" />
-        <input id="author_name1" type="text" placeholder="Author name" />
-        <input id="book_price1" type="text" placeholder="Book Price" />
-        
-        <input id="insert" type="submit" name="Add_book" value="Add Book" />
-       
+        <input id="delete" type="submit" name="Remove_Book" value="Remove Book" />
+
         <a href="bookadded.html">      
           <input id="input" type="submit" name="Add_book" value="Done" />
         </a>
@@ -61,15 +57,11 @@
         bookPRICE = document.getElementById('book_price1').value;
       }
 
-      document.getElementById('insert').onclick = function () {
+      document.getElementById('delete').onclick = function () {
         ready();
-        firebase.database().ref('AddBook/'+bookID).set({
-          bookId: bookID,
-          bookTitle: bookTITLE,
-          AuthorNAme: authorNAME,
-          BookPrice: bookPRICE
-        });
+        firebase.database().ref('AddBook/'+bookID).remove();
       }
+
       
     </script>    
 
