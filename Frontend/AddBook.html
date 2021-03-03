@@ -24,7 +24,8 @@
         
         <input id="insert" type="submit" name="Add_book" value="Add" />
         <input id="select" type="submit" name="select" value="Select" />
-        <input id="delete" type="submit" name="Add_book" value="Remove" />
+        <input id="update" type="submit" name="update_book" value="Update" />
+        <input id="delete" type="submit" name="delete_book" value="Remove" />
        
         <a href="bookadded.html">      
           <input id="input" type="submit" name="Add_book" value="Done" />
@@ -63,29 +64,51 @@
         bookPRICE = document.getElementById('book_price1').value;
       }
 
+      function clear() {
+        document.getElementById('book_id1').value = null;
+        document.getElementById('book_title1').value = null;
+        document.getElementById('author_name1').value = null;
+        document.getElementById('book_price1').value = null;
+
+      }
+
       document.getElementById('insert').onclick = function () {
         ready();
         firebase.database().ref('AddBook/'+bookID).set({
           bookId: bookID,
           bookTitle: bookTITLE,
-          AuthorNAme: authorNAME,
+          AuthorName: authorNAME,
           BookPrice: bookPRICE
         });
+        clear();
       }
 
-      document.getElementById('load').onclick = function () {
+      document.getElementById('select').onclick = function () {
         ready();
         firebase.database().ref('AddBook/'+bookID).on('value',function(snapshot){
-          document.getElementById('book_id1').value = snapshot.val().bookID;
-          document.getElementById('book_title1').value = snapshot.val().bookTITLE;
-          document.getElementById('author_name1').value = snapshot.val().authorNAME;
-          document.getElementById('book_price1').value = snapshot.val().bookPRICE;
+          document.getElementById('book_id1').value = snapshot.val().bookId;
+          document.getElementById('book_title1').value = snapshot.val().bookTitle;
+          document.getElementById('author_name1').value = snapshot.val().AuthorName;
+          document.getElementById('book_price1').value = snapshot.val().BookPrice;
         })
       }
 
       document.getElementById('delete').onclick = function () {
         ready();
         firebase.database().ref('AddBook/'+bookID).remove();
+        clear();
+      }
+
+      document.getElementById('update').onclick = function () {
+        ready();
+        firebase.database().ref('AddBook/'+bookID).update({
+
+          bookId: bookID,
+          bookTitle: bookTITLE,
+          AuthorName: authorNAME,
+          BookPrice: bookPRICE
+        });
+        clear();
       }
       
     </script>    

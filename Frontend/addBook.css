@@ -69,7 +69,7 @@ h1 {
 input[type="text"] {
     display: block;
     box-sizing: border-box;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     padding: 4px;
     width: 220px;
     height: 32px;
@@ -90,8 +90,8 @@ input[type="text"]:focus {
 input[type="submit"] {
     margin-top: 6%;
     margin-right: 8%;
-    width: 40%;
-    height: 15%;
+    width: 35%;
+    height: 13%;
     background: black;
     border: none;
     border-radius: 5px;
@@ -104,9 +104,6 @@ input[type="submit"] {
     margin-bottom: 3%;
 }
 
-#back_btn{
-    margin-left: 65px;
-}
 
 input[type="submit"]:hover,
 input[type="submit"]:focus {
