@@ -57,8 +57,8 @@ nav .logo{
 .book-style h1{
     font-weight: 500;
     font-size: 28px;
-    padding-top: 2em;
-    margin-left: 10%;
+    padding-top: 1.5em;
+    margin-left: 34.25%;
     text-align: center;
 }
 .book-style p{
@@ -72,7 +72,10 @@ nav .logo{
     margin-left: 34%;
     font-size: 16px;
 }
-
+.book-style .book_id{
+  padding-top: 3.2%;
+  margin-left: 12.5%;
+}
 .input-data {
   position: absolute;
   top: 2em;
