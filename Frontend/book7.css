@@ -37,7 +37,7 @@ nav .logo{
   position: relative;
   margin: 5% auto;
   width: 1000px;
-  height: 420px;
+  height: 440px;
   left: 1%;
   margin-top: 12%;
   border: black;
@@ -48,7 +48,7 @@ nav .logo{
 }
 .book-style img{
     width: 20%;
-    margin-top: -8.5%;
+    margin-top: -9%;
     margin-left: 8%;
     border: 2px solid black;
     box-shadow: 6px 6px 7px rgb(194, 194, 194);
@@ -57,7 +57,7 @@ nav .logo{
 .book-style h1{
     font-weight: 500;
     font-size: 28px;
-    padding-top: 1.5em;
+    padding-top: 0em;
     margin-left: 34.25%;
 }
 .book-style p{
@@ -73,7 +73,7 @@ nav .logo{
 }
 .book-style .book_id{
   padding-top: 40px;
-  margin-left: 13%;
+  margin-left: 12.5%;
 }
 
 .input-data {
@@ -103,7 +103,7 @@ input[type="submit"] {
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
-  margin-top: 80%;
+  margin-top: 85%;
   margin-right: 9%;
 }
 

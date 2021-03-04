@@ -37,7 +37,7 @@ nav .logo{
   position: relative;
   margin: 5% auto;
   width: 1000px;
-  height: 420px;
+  height: 470px;
   left: 1%;
   margin-top: 12%;
   border: black;
@@ -57,7 +57,7 @@ nav .logo{
 .book-style h1{
   font-weight: 500;
   font-size: 28px;
-  padding-top: 1.5em;
+  padding-top: 0em;
   margin-left: 34.25%;
 }
 .book-style p{
@@ -102,7 +102,7 @@ input[type="submit"] {
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
-  margin-top: 90%;
+  margin-top: 110%;
   margin-right: 9%;
 }
 

@@ -12,9 +12,12 @@
     <div id="id01" class="modal">
         <link rel="stylesheet" href="book4.css" />
           <div id="book-box">
+            <a href="homepage.html">
+              <img class="arrow" src="../src/images/arrow.png" style="width: 25px; margin-left: 3%; margin-top: 2.5%;">
+            </a>
               <div class="book-style">
                 <h1>Operating System Concepts</h1>
-                <h2>Abraham Sliberschtaz, Peter Baer Galvin, Gerg Gagne</h2>
+                <h2>Abraham Sliberschtaz, Peter Baer Galvin, Gerg Gagne </h2>
                 <img src="../src/images/book4.jpg">
                 <p>
                     The main software when using the computer is the operating system. 
@@ -31,16 +34,66 @@
                 <h2 class="book_id">Book ID: OS212</h2>
               </div>
             <div class="input-data">
-              <a href="borrowBook1.html">
-                <br>
-                <br>
-                <input type="submit" name="borrow" value="Borrow" />
-              </a>
-              <a href="buyBook1.html">
-                <input type="submit" name="buy" value="Buy" />
-              </a>
+              <input id="insert_borrow" type="submit" name="borrow" value="Borrow" />
+              <input id="insert_buy" type="submit" name="buy" value="Buy" />
             </div>
           </div>
      </div>
+     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script id="mainScript">
+       var firebaseConfig = {
+      apiKey: "AIzaSyDHJ_-ZQYPFVq7-NtsJXXMFKnga9dxGpVM",
+      authDomain: "library-20343.firebaseapp.com",
+      databaseURL: "https://library-20343-default-rtdb.firebaseio.com",
+      projectId: "library-20343",
+      storageBucket: "library-20343.appspot.com",
+      messagingSenderId: "212815264632",
+      appId: "1:212815264632:web:a934e86c5eb179e911e68d",
+      measurementId: "G-9EELX46W32"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    var bookID, bookTITLE, authorNAME, bookPRICE;
+      
+      function ready() {
+        bookID = "OS212";
+        bookTITLE = "Operating System Concepts";
+        authorNAME = "Abraham Sliberschtaz, Peter Baer Galvin, Gerg Gagne";
+        bookPRICE = 2000;
+      }
+
+      document.getElementById('insert_borrow').onclick = function () {
+        ready();
+        firebase.database().ref('BorrowedBooks/'+bookID).set({
+          bookId: bookID,
+          bookTitle: bookTITLE,
+          AuthorName: authorNAME,
+          BookPrice: bookPRICE
+        });
+        swal({
+          title: "Borrowed!", 
+          text: "Book added in borrow book list.", 
+          icon: "success"
+        });
+      }
+      document.getElementById('insert_buy').onclick = function () {
+        ready();
+        firebase.database().ref('BoughtBooks/'+bookID).set({
+          bookId: bookID,
+          bookTitle: bookTITLE,
+          AuthorName: authorNAME,
+          BookPrice: bookPRICE
+        });
+        swal({
+          title: "Bought!", 
+          text: "Book added in buy book list.", 
+          icon: "success"
+        });
+      }      
+    </script>
   </body>
 </html>

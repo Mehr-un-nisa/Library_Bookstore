@@ -8,10 +8,12 @@
         </div>
         <div class="logo">Digital Library | Bookstore</div>    
     </nav>
-
     <div id="id01" class="modal">
         <link rel="stylesheet" href="book7.css" />
           <div id="book-box">
+            <a href="homepage.html">
+              <img class="arrow" src="../src/images/arrow.png" style="width: 25px; margin-left: 3%; margin-top: 2.5%;">
+            </a>
               <div class="book-style">
                 
                 <h1>Artificial intelligence</h1>
@@ -32,23 +34,23 @@
               </div>
               
             <div class="input-data">
-              <a href="borrowBook1.html">
                 <br>
                 <br>
-                <input id="insert" type="submit" name="borrow" value="Borrow" />
-              </a>
-              <a href="buyBook1.html">
-                <input type="submit" name="buy" value="Buy" />
-              </a>
+                <input id="insert_borrow" type="submit" name="borrow" value="Borrow" />
+                <input id="insert_buy" type="submit" name="buy" value="Buy" />
+
+              <a href="borrowBook1.html"></a>
+              <a href="buyBook1.html"></a>
             </div>
           </div>
      </div>
 
 
 
-     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script id="mainScript">
        var firebaseConfig = {
@@ -63,51 +65,43 @@
     };
     firebase.initializeApp(firebaseConfig);
 
-      var bookID, bookTITLE, authorNAME, bookPRICE;
+    var bookID, bookTITLE, authorNAME, bookPRICE;
       
       function ready() {
-        bookID = document.getElementById('book_id1').value;
-        bookTITLE = document.getElementById('book_title1').value;
-        authorNAME = document.getElementById('author_name1').value;
-        bookPRICE = document.getElementById('book_price1').value;
+        bookID = "AI112";
+        bookTITLE = "Artificial intelligence";
+        authorNAME = "Chris Baker";
+        bookPRICE = 3000;
       }
 
-      document.getElementById('insert').onclick = function () {
+      document.getElementById('insert_borrow').onclick = function () {
         ready();
-        firebase.database().ref('AddBook/'+bookID).set({
+        firebase.database().ref('BorrowedBooks/'+bookID).set({
           bookId: bookID,
           bookTitle: bookTITLE,
           AuthorName: authorNAME,
           BookPrice: bookPRICE
         });
+        swal({
+          title: "Borrowed!", 
+          text: "Book added in borrow book list.", 
+          icon: "success"
+        });
       }
-
-      document.getElementById('select').onclick = function () {
+      document.getElementById('insert_buy').onclick = function () {
         ready();
-        firebase.database().ref('AddBook/'+bookID).on('value',function(snapshot){
-          document.getElementById('book_id1').value = snapshot.val().bookId;
-          document.getElementById('book_title1').value = snapshot.val().bookTitle;
-          document.getElementById('author_name1').value = snapshot.val().AuthorName;
-          document.getElementById('book_price1').value = snapshot.val().BookPrice;
-        })
-      }
-
-      document.getElementById('delete').onclick = function () {
-        ready();
-        firebase.database().ref('AddBook/'+bookID).remove();
-      }
-
-      document.getElementById('update').onclick = function () {
-        ready();
-        firebase.database().ref('AddBook/'+bookID).update({
-
+        firebase.database().ref('BoughtBooks/'+bookID).set({
           bookId: bookID,
           bookTitle: bookTITLE,
           AuthorName: authorNAME,
           BookPrice: bookPRICE
         });
-      }
-      
+        swal({
+          title: "Bought!", 
+          text: "Book added in buy book list.", 
+          icon: "success"
+        });
+      }      
     </script>
  
   </body>
