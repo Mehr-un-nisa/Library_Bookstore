@@ -30,17 +30,19 @@ nav .logo {
     position: relative;
     margin: 5% auto;
     margin-top: 8%;
-    background-color: white;
+    background-color: rgb(104, 101, 101);
     background-clip: content-box;
 }
 
 h1 {
     margin: 0 0 20px 0;
-    font-weight: 300;
-    font-size: 28px;
+    font-weight: 500;
+    font-size: 30px;
     padding-top: 2em;
+    padding-left: 10em;
+    padding-right: 10em;
     text-align: center;
-    background-color: darkgrey;
+    background-color: rgb(136, 135, 135);
     background-clip: content-box;
 }
 
@@ -73,12 +75,17 @@ h2 {
 }
 
 body {
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMYaEI35ZYo-adzmmT9YFawqdb6-5VgRZi3g&usqp=CAU);
+    background: #ffffff;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    background: url(../src/images/books-bg.jpg);
 }
 
 .content-table th,
 .content-table td {
-    padding: 12px 15px;
+    padding: 12px 50px;
 }
 
 .content-table tbody tr {
@@ -90,9 +97,10 @@ body {
 }
 
 input[type="submit"] {
-    margin-top: 5%;
-    width: 9%;
-    height: 40px;
+    margin-top: 6%;
+    margin-right: 8%;
+    width: 35%;
+    height: 13%;
     background: black;
     border: none;
     border-radius: 5px;
@@ -102,7 +110,8 @@ input[type="submit"] {
     text-transform: uppercase;
     transition: 0.1s ease;
     cursor: pointer;
-    margin-left: 45%;
+    margin-bottom: 1%;
+    place-content: center;
 }
 
 input[type="submit"]:hover,
