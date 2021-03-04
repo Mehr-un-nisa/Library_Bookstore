@@ -1,0 +1,130 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Library | Bookstore</title>
+  </head>
+
+  <body>
+    <script src="firebase.js" ></script>
+    <script src="signup.js" ></script>
+    <nav>
+          <div class="menu-icon">
+          </div>
+          <div class="logo">Digital Library</div>
+      </nav>
+      <div id="error_message">
+
+      </div>
+      <div id="id01" class="modal">
+          <div id="Sign-in">
+              <h1 class="heading">Online Library and Bookstore</h1>
+              <div class="input-data">
+                  <h1>Sign Up</h1>
+                  <link rel="stylesheet" href="signup.css" />
+
+
+                 
+                
+                  <input id="emailbox" type="email" placeholder="Email Address"></input>
+                  <input id="passwordbox" type="password" placeholder="Password"></input>
+            
+              <input id="insert" type="submit" name="signup"  value="Sign Me Up" />
+            </a>
+          
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+      <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+
+    <script id="MainScript">
+     
+     
+
+      var nameV, emailV, passV, error_message;
+
+      function Ready() {
+        nameV = document.getElementById("namebox").value;
+        emailV = document.getElementById("emailbox").value;
+        passV = document.getElementById("passwordbox").value;
+        error_message = document.getElementById("error_message");
+        error_message.style.padding = "10px";
+      }
+
+
+      document.getElementById("insert").onclick = async function () {
+        Ready();
+        // validate();
+        console.log("Storing Data...");
+        try {
+          const result = await firebase
+            .database()
+            .ref("student/" + nameV)
+            .set({
+              NameOfUser: nameV,
+              Email: emailV,
+              Password: passV,
+            });
+
+          console.log("done");
+          window.location.replace = "homepage.html";
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    </script>
+  </body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Online Library | Bookstore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="login.css" /> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css"
+    />
+  </head>
+  <body>
+    <script src="firebase.js"></script>
+    <script src="signup.js"></script>
+   
+    <nav>
+      <div class="menu-icon">
+        </div>
+        <div class="logo">Digital Library</div>    
+    </nav> 
+    <div id="id01" class="modal">
+     
+        <link rel="stylesheet" href="login.css" />
+         
+             
+              <div id="firebaseui-auth-container"></div>
+            
+            </div>
+          </div>
+        </span>
+      </div> 
+
+      <button class="Backbutton"><a href="frontPage.html">Back</a></button>    
+
+  </body>
+</html>
