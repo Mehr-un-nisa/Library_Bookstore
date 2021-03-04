@@ -10,22 +10,44 @@
 </head>
 
 <body>
-    <div class="container mt-3">
-        <table class="table table-dark text-white">
-            <thead>
-                <th>Sno</th>
-                <th>AuthorName</th>
-                <th>BookPrice</th>
-                <th>bookid</th>
-                <th>bookTitle</th>
-            </thead>
-            <tbody id="tbody1">
-            </tbody>
-        </table>
+    <nav>
+        <div class="menu-icon">
+        </div>
+        <div class="logo">Digital Library</div>
+    </nav>
+
+    <link rel="stylesheet" href="ViewRecord.css" />
+    <div class="ViewRecordTable">
+        <h1>Available Books of Digital Library store..... </h1>
+
+
+
+        <div class="container mt-3" id="id01">
+            <table class="table table-dark text-white">
+                <thead>
+                    <th>Sno</th>
+                    <th>AuthorName</th>
+                    <th>BookPrice</th>
+                    <th>bookid</th>
+                    <th>bookTitle</th>
+                </thead>
+                <tbody id="tbody1">
+                </tbody>
+            </table>
+        </div>
+        <a href="AdminPage.html">
+            <input type="submit" name="back" value="Back" />
+        </a>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+    <!-- <a href="AddBook.html">
+        <input type="submit" name="Manage Books" value="Manage Books" />
+    </a> -->
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
 
     <script id="MainScript">
         //-----------------------------------------
@@ -44,25 +66,39 @@
         firebase.initializeApp(firebaseConfig);
 
 
-        //------------------------------------------
+        //-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
         function SelectAllData() {
-            firebase.database().ref('AddBook').on('value',
-                function(AllRecords) {
-                    AllRecord.forEach(
+            firebase.database().ref('AddBook').once('value',
+                function(snapshot) {
+                    snapshot.forEach(
                         function(CurrentRecord) {
                             var name = CurrentRecord.val().AuthorName;
                             var bookprice = CurrentRecord.val().BookPrice;
-                            var bookid = CurrentRecord.val().bookid;
+                            var bookid = CurrentRecord.val().bookId;
                             var booktitle = CurrentRecord.val().bookTitle;
                             AddItemsToTable(name, bookprice, bookid, booktitle);
+                            console.log(bookid);
                         }
 
                     );
                 }
             );
         }
-        window.onload = SelectAllData;
-        //-------------------------------------------------
+        // var firebaseRef = firebase.database().ref('AddBook');
+
+
+        // firebaseRef.on("value",
+        //     function(snapshot) {
+        //         snapshot.forEach(function(element) {
+        //             console.log(element.key);
+        //         });
+        //     })
+
+
+
+        window.onload = SelectAllData();
+        // //-------------------------------------------------
 
         var stdno = 0;
 
