@@ -14,7 +14,10 @@ body {
   left: -250px;
   width: 250px;
   height: 100%;
-  background: #042331;
+  /* background: #042331; */
+  background: #353634;
+  /* background: #3d362d; */
+
   transition: all 0.5s ease;
 }
 .sidebar header {
@@ -22,7 +25,7 @@ body {
   color: white;
   text-align: center;
   line-height: 70px;
-  background: #063146;
+  background: #3d362d;
   user-select: none;
 }
 .sidebar ul a {
@@ -35,7 +38,7 @@ body {
   padding-left: 40px;
   box-sizing: border-box;
   border-top: 3px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   transition: 0.4s;
 }
 ul li:hover {
@@ -48,7 +51,7 @@ label #btn,
 label #cancel {
   position: absolute;
   cursor: pointer;
-  background: #042331;
+  background: black;
   border-radius: 3px;
 }
 label #btn {
