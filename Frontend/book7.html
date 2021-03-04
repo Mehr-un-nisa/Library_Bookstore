@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="book7.css" />
           <div id="book-box">
               <div class="book-style">
+                
                 <h1>Artificial intelligence</h1>
                 <h2>Chris Baker</h2>
                 <img src="../src/images/book7.jpg">
@@ -27,12 +28,14 @@
                     <br>
                     <b> Book price: Rs 3000 </b>
                 </p>
+                <h2 class="book_id">Book ID: AI112</h2>
               </div>
+              
             <div class="input-data">
               <a href="borrowBook1.html">
                 <br>
                 <br>
-                <input type="submit" name="borrow" value="Borrow" />
+                <input id="insert" type="submit" name="borrow" value="Borrow" />
               </a>
               <a href="buyBook1.html">
                 <input type="submit" name="buy" value="Buy" />
@@ -40,5 +43,72 @@
             </div>
           </div>
      </div>
+
+
+
+     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+    <script id="mainScript">
+       var firebaseConfig = {
+      apiKey: "AIzaSyDHJ_-ZQYPFVq7-NtsJXXMFKnga9dxGpVM",
+      authDomain: "library-20343.firebaseapp.com",
+      databaseURL: "https://library-20343-default-rtdb.firebaseio.com",
+      projectId: "library-20343",
+      storageBucket: "library-20343.appspot.com",
+      messagingSenderId: "212815264632",
+      appId: "1:212815264632:web:a934e86c5eb179e911e68d",
+      measurementId: "G-9EELX46W32"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+      var bookID, bookTITLE, authorNAME, bookPRICE;
+      
+      function ready() {
+        bookID = document.getElementById('book_id1').value;
+        bookTITLE = document.getElementById('book_title1').value;
+        authorNAME = document.getElementById('author_name1').value;
+        bookPRICE = document.getElementById('book_price1').value;
+      }
+
+      document.getElementById('insert').onclick = function () {
+        ready();
+        firebase.database().ref('AddBook/'+bookID).set({
+          bookId: bookID,
+          bookTitle: bookTITLE,
+          AuthorName: authorNAME,
+          BookPrice: bookPRICE
+        });
+      }
+
+      document.getElementById('select').onclick = function () {
+        ready();
+        firebase.database().ref('AddBook/'+bookID).on('value',function(snapshot){
+          document.getElementById('book_id1').value = snapshot.val().bookId;
+          document.getElementById('book_title1').value = snapshot.val().bookTitle;
+          document.getElementById('author_name1').value = snapshot.val().AuthorName;
+          document.getElementById('book_price1').value = snapshot.val().BookPrice;
+        })
+      }
+
+      document.getElementById('delete').onclick = function () {
+        ready();
+        firebase.database().ref('AddBook/'+bookID).remove();
+      }
+
+      document.getElementById('update').onclick = function () {
+        ready();
+        firebase.database().ref('AddBook/'+bookID).update({
+
+          bookId: bookID,
+          bookTitle: bookTITLE,
+          AuthorName: authorNAME,
+          BookPrice: bookPRICE
+        });
+      }
+      
+    </script>
+ 
   </body>
 </html>

@@ -55,10 +55,14 @@ nav .logo{
 }
 
 .book-style h1{
-    font-weight: 500;
-    font-size: 28px;
-    padding-top: 2em;
-    margin-left: 36%;
+  font-weight: 500;
+  font-size: 28px;
+  padding-top: 1em;
+  margin-left: 34.25%;
+}
+.book-style .book_id{
+  padding-top: 0.7%;
+  margin-left: 14%;
 }
 .book-style p{
     font-size: 16px;
