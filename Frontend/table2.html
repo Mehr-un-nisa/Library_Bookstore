@@ -16,11 +16,12 @@
         <div class="logo">Digital Library</div>
     </nav>
 
-    <link rel="stylesheet" href="ViewRecord.css" />
+    <link rel="stylesheet" href="table2.css" />
     <div class="ViewRecordTable">
-        <h1>Available Books of Digital Library store..... </h1>
-
-
+        <a href="homepage.html">
+            <img class="arrow" src="../src/images/arrow.png" style="width: 25px; margin-left: 3%; margin-top: 0.5%;">
+        </a>
+        <h1>Available Books of Digital Library store... </h1>
 
         <div class="container mt-3" id="id01">
             <table class="table table-dark text-white">
@@ -35,9 +36,15 @@
                 </tbody>
             </table>
 
-            <a href="homepage.html">
-                <input id="insert" type="submit" name="back" value="Back" />
-            </a>
+            
+            <div class="input-data">
+                <a href="../Frontend/borrowBookFillingPage.html">
+                    <input id="insert_borrow" type="submit" name="borrow" value="Borrow" />
+                </a>
+                <a href="../Frontend/buyBookFillingPage.html">
+                    <input id="insert_buy" type="submit" name="buy" value="Buy" /></a>
+            </div>
+        
         </div>
     </div>
 

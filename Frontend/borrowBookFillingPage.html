@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Library | Bookstore</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="menu-icon"></div>
+      <div class="logo">Digital Library</div>
+    </nav>
+    <div id="buyer-box">
+      <a href="table2.html">
+        <img class="arrow" src="../src/images/arrow.png" style="width: 20px; margin-left: 4%; margin-top: 3%;">
+      </a>
+      <h1 class="heading">Online Library and Bookstore</h1>
+      <div class="input-data">
+        <h1 style="margin-top: 55px;">Borrow Book</h1>
+        <link rel="stylesheet" href="../Frontend/borrowBookFillingPage.css" />
+        
+        <input id="book_id1" type="text"  placeholder="Book ID" />
+        <input id="book_title1" type="text" placeholder="Book Title" />
+        <input id="author_name1" type="text" placeholder="Author name" />
+        
+        <input id="insert" type="submit" name="Borrow_book" value="Borrow" />
+        <input id="select" type="submit" name="select" value="Details" />
+      </div>
+
+      <div class="right"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script id="mainScript">
+       var firebaseConfig = {
+      apiKey: "AIzaSyDHJ_-ZQYPFVq7-NtsJXXMFKnga9dxGpVM",
+      authDomain: "library-20343.firebaseapp.com",
+      databaseURL: "https://library-20343-default-rtdb.firebaseio.com",
+      projectId: "library-20343",
+      storageBucket: "library-20343.appspot.com",
+      messagingSenderId: "212815264632",
+      appId: "1:212815264632:web:a934e86c5eb179e911e68d",
+      measurementId: "G-9EELX46W32"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+      var bookID, bookTITLE, authorNAME;
+      
+      function ready() {
+        bookID = document.getElementById('book_id1').value;
+        bookTITLE = document.getElementById('book_title1').value;
+        authorNAME = document.getElementById('author_name1').value;
+      }
+
+      function clear() {
+        document.getElementById('book_id1').value = null;
+        document.getElementById('book_title1').value = null;
+        document.getElementById('author_name1').value = null;
+      }
+
+      document.getElementById('insert').onclick = function () {
+        ready();
+        firebase.database().ref('BorrowedBooks/'+bookID).set({
+          bookId: bookID,
+          bookTitle: bookTITLE,
+          AuthorName: authorNAME
+        });
+        swal({
+          title: "Borrowed!", 
+          text: "You borrowed the book.", 
+          icon: "success"
+        });
+        clear();
+      }
+
+      document.getElementById('select').onclick = function () {
+        ready();
+        firebase.database().ref('AddBook/'+bookID).on('value',function(snapshot){
+          document.getElementById('book_id1').value = snapshot.val().bookId;
+          document.getElementById('book_title1').value = snapshot.val().bookTitle;
+          document.getElementById('author_name1').value = snapshot.val().AuthorName;
+        })
+      }
+
+      function checkForBlanks() {
+        if(document.getElementById('book_id1').value == ""){
+          alert('Please enter Book ID.');
+        }
+        return false;  
+      }
+    </script>    
+
+  </body>
+</html>
