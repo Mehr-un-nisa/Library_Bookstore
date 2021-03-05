@@ -39,7 +39,7 @@ nav .logo {
     position: relative;
     margin: 5% auto;
     width: 600px;
-    height: 700px;
+    height: 540px;
     left: 3%;
     margin-top: 12%;
     border: black;
@@ -62,8 +62,12 @@ nav .logo {
 h1 {
     font-weight: 300;
     font-size: 28px;
-    padding-top: 2em;
     text-align: center;
+    margin-left: -50px;
+    margin-bottom: 13%;
+}
+a{
+    text-decoration: none;
 }
 
 input[type="text"] {
@@ -79,6 +83,7 @@ input[type="text"] {
     font-weight: 400;
     font-size: 15px;
     transition: 0.2s ease;
+    margin-top: 6%;
 }
 
 input[type="text"]:focus {
@@ -88,7 +93,7 @@ input[type="text"]:focus {
 }
 
 input[type="submit"] {
-    margin-top: 6%;
+    margin-top: 8%;
     margin-right: 8%;
     width: 35%;
     height: 13%;

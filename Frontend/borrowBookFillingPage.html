@@ -20,14 +20,12 @@
         <h1 style="margin-top: 55px;">Borrow Book</h1>
         <link rel="stylesheet" href="../Frontend/borrowBookFillingPage.css" />
         
-        <input id="book_id1" type="text"  placeholder="Book ID" />
+        <input id="book_id1" type="text"  placeholder="Book ID" name="book_id" />
         <input id="book_title1" type="text" placeholder="Book Title" />
         <input id="author_name1" type="text" placeholder="Author name" />
-        
-        <input id="insert" type="submit" name="Borrow_book" value="Borrow" />
-        <input id="select" type="submit" name="select" value="Details" />
+        <input id="insert" type="submit" name="Borrow_book" value="Borrow"/>
+        <input id="select" type="submit" name="select" value="Details"/>   
       </div>
-
       <div class="right"></div>
     </div>
 
@@ -65,26 +63,32 @@
 
       document.getElementById('insert').onclick = function () {
         ready();
-        firebase.database().ref('BorrowedBooks/'+bookID).set({
+        if(document.getElementById('book_id1').value == ""){
+          alert('Please enter Book ID.');
+        } 
+        else {
+          firebase.database().ref('BorrowedBooks/'+bookID).set({
           bookId: bookID,
           bookTitle: bookTITLE,
           AuthorName: authorNAME
-        });
-        swal({
-          title: "Borrowed!", 
-          text: "You borrowed the book.", 
-          icon: "success"
-        });
-        clear();
+          });
+          swal({
+            title: "Borrowed!", 
+            text: "You borrowed the book.", 
+            icon: "success"
+          });
+          clear();
+        }
       }
 
       document.getElementById('select').onclick = function () {
         ready();
+        checkForBlanks();
         firebase.database().ref('AddBook/'+bookID).on('value',function(snapshot){
-          document.getElementById('book_id1').value = snapshot.val().bookId;
-          document.getElementById('book_title1').value = snapshot.val().bookTitle;
-          document.getElementById('author_name1').value = snapshot.val().AuthorName;
-        })
+        document.getElementById('book_id1').value = snapshot.val().bookId;
+        document.getElementById('book_title1').value = snapshot.val().bookTitle;
+        document.getElementById('author_name1').value = snapshot.val().AuthorName;
+      })
       }
 
       function checkForBlanks() {
