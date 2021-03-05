@@ -77,8 +77,7 @@
         firebase.database().ref('BorrowedBooks/'+bookID).set({
           bookId: bookID,
           bookTitle: bookTITLE,
-          AuthorName: authorNAME,
-          BookPrice: bookPRICE
+          AuthorName: authorNAME
         });
         swal({
           title: "Borrowed!", 
