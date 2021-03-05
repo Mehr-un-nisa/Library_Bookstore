@@ -53,7 +53,7 @@
     };
     firebase.initializeApp(firebaseConfig);
 
-    var bookID, bookTITLE, authorNAME, bookPRICE;
+    var bookID, bookTITLE, authorNAME, bookPRICE, userEMAIL;
       
       function ready() {
         bookID = "BSQ345";
@@ -64,7 +64,16 @@
 
       document.getElementById('insert_borrow').onclick = function () {
         ready();
-        firebase.database().ref('BorrowedBooks/'+bookID).set({
+       
+        userEMAIL = prompt("Confirm your email. (exclude '.com')", "e.g. xyz@gmail");
+        for(var i = 0; i < userEMAIL.length; i++)
+        {
+          if(userEMAIL.charAt(i) == '.' && userEMAIL.charAt(i + 1) == 'c' && userEMAIL.charAt(i + 2) == 'o' && userEMAIL.charAt(i + 3) == 'm')
+          {
+            userEMAIL = prompt("Confirm your email. (exclude '.com')", "e.g. xyz@gmail");
+          }
+        }
+        firebase.database().ref('BorrowedBooks/'+userEMAIL+' '+bookID).set({
           bookId: bookID,
           bookTitle: bookTITLE,
           AuthorName: authorNAME
@@ -75,9 +84,18 @@
           icon: "success"
         });
       }
+
       document.getElementById('insert_buy').onclick = function () {
         ready();
-        firebase.database().ref('BoughtBooks/'+bookID).set({
+        userEMAIL = prompt("Confirm your email. (exclude '.com')", "e.g. xyz@gmail");
+        for(var i = 0; i < userEMAIL.length; i++)
+        {
+          if(userEMAIL.charAt(i) == '.' && userEMAIL.charAt(i + 1) == 'c' && userEMAIL.charAt(i + 2) == 'o' && userEMAIL.charAt(i + 3) == 'm')
+          {
+            userEMAIL = prompt("Confirm your email. (exclude '.com')", "e.g. xyz@gmail");
+          }
+        }
+        firebase.database().ref('BoughtBooks/'+userEMAIL+' '+bookID).set({
           bookId: bookID,
           bookTitle: bookTITLE,
           AuthorName: authorNAME,
@@ -88,7 +106,7 @@
           text: "Thank you for your purchase!", 
           icon: "success"
         });
-      }      
+      } 
     </script>
 </body>
 
