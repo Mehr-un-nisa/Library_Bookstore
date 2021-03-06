@@ -9,7 +9,7 @@ body {
     color: rgb(0, 0, 0);
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    background: url(../src/images/books-bg.jpg);    
+    background: url(../src/images/books-bg.jpg);  
 }
 
 nav {
@@ -58,12 +58,15 @@ nav .logo {
     height: 400px;
     padding-left: 180px;
 }
-
+a{
+    text-decoration: none;
+}
 h1 {
     font-weight: 300;
     font-size: 28px;
     padding-top: 2em;
     text-align: center;
+    margin-left: -60px;
 }
 
 input[type="text"] {

@@ -29,6 +29,7 @@
       </div>
       <div class="right"></div>
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
@@ -46,30 +47,34 @@
       measurementId: "G-9EELX46W32"
     };
     firebase.initializeApp(firebaseConfig);
-
-      var bookID, bookTITLE, authorNAME, bookPRICE;
-      
+      var bookID, bookTITLE, authorNAME, bookPRICE, userEMAIL;
       function ready() {
         bookID = document.getElementById('book_id1').value;
         bookTITLE = document.getElementById('book_title1').value;
         authorNAME = document.getElementById('author_name1').value;
         bookPRICE = document.getElementById('book_price1').value;
       }
-
       function clear() {
         document.getElementById('book_id1').value = null;
         document.getElementById('book_title1').value = null;
         document.getElementById('author_name1').value = null;
         document.getElementById('book_price1').value = null;
       }
-
       document.getElementById('insert').onclick = function () {
         ready();
         if(document.getElementById('book_id1').value == ""){
           alert('Please enter Book ID.');
         } 
         else {
-          firebase.database().ref('BoughtBooks/'+bookID).set({
+          userEMAIL = prompt("Confirm your email. (exclude '.com')", "e.g. xyz@gmail");
+          for(var i = 0; i < userEMAIL.length; i++)
+          {
+            if(userEMAIL.charAt(i) == '.' && userEMAIL.charAt(i + 1) == 'c' && userEMAIL.charAt(i + 2) == 'o' && userEMAIL.charAt(i + 3) == 'm')
+            {
+              userEMAIL = prompt("Confirm your email. (exclude '.com')", "e.g. xyz@gmail");
+            }
+          }
+          firebase.database().ref('BoughtBooks/'+userEMAIL+' '+bookID).set({
             bookId: bookID,
             bookTitle: bookTITLE,
             AuthorName: authorNAME,
