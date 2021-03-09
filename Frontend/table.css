@@ -108,12 +108,12 @@ body {
     margin-left: 19%;
   }
 .input-data a{
-    text-decoration: none;
+        text-decoration: none;
 }
 
 input[type="submit"] {
-    width: 40%;
-    height: 15%;
+    width: 12%;
+    height: 8%;
     background: black;
     border: none;
     border-radius: 5px;

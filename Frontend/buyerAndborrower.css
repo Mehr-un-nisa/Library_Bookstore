@@ -1,18 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
-*:focus {
-  outline: none;
-}
-
-body {
-  background: #e2e1e1;
-  font-size: 16px;
-  color: rgb(0, 0, 0);
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* Change your font family */
 }
 
 nav {
-  width: 1149px;
+  width: 100%;
   position: absolute;
   height: 85px;
   background: black;
@@ -29,95 +21,100 @@ nav {
 
 nav .logo {
   font-size: 40px;
-  margin-right: 29%;
+  margin-right: 38%;
   font-weight: 700;
   color: white;
 }
 
-#book-box {
+.ViewRecordTable {
   position: relative;
   margin: 5% auto;
-  width: 800px;
-  height: 300px;
-  left: 1%;
-  margin-top: 12%;
-  border: black;
-  background: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  border-bottom: black;
+  margin-top: 8%;
+  background-clip: content-box;
 }
 
-.book-style h1 {
-  font-weight: 500;
-  font-size: 28px;
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  font-size: 35px;
   padding-top: 2em;
+  padding-bottom: 1.5em;
+  padding-left: 9.5em;
+  padding-right: 10em;
   text-align: center;
+  background-clip: content-box;
 }
 
-.book-style p {
+.content-table {
+  border-collapse: collapse;
+  margin: 0, auto;
+  font-size: 0.9em;
+  min-width: 700px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(85, 85, 85, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+}
+
+.content-table thead tr {
+  background-color: black;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+body {
+  background: #ffffff;
   font-size: 16px;
-  margin-left: 34%;
-  margin-top: -20%;
-  margin-right: 10%;
-  text-align: justify;
+  color: rgb(0, 0, 0);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  background: #e2e1e1;
 }
 
-.book-style h2 {
-  margin-left: 34%;
-  font-size: 16px;
+.content-table th,
+.content-table td {
+  padding: 12px 50px;
 }
 
-.input-data {
-  position: absolute;
-  top: 2em;
-  box-sizing: border-box;
-  padding: 40px;
-  width: 500px;
-  height: 400px;
-  padding-left: 180px;
-  margin-left: 16%;
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
 }
 
-.input-data a {
-  text-decoration: none;
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid black;
 }
 
-.book-style img {
-  background-image: url(src/images/libraryBook.jpg);
-  background-size: cover;
-  width: 100%;
-  height: 200px;
-  left: 0px;
+input[type="submit"] {
+  margin-top: 6%;
+  margin-left: 43%;
+  width: 10%;
+  height: 40px;
+  background: black;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+  margin-bottom: 1%;
+  place-content: center;
 }
 
-.dropdown {
-  margin-left: 14%;
-  margin-top: -0.1%;
-  position: relative;
-  display: block;
-  min-width: 260px;
-  height: 300px;
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+  font-size: 14px;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
 }

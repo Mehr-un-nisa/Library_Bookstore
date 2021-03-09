@@ -1,67 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="buyerAndborrower.css" />
-    <title>Online Library | Bookstore</title>
-  </head>
-  <body>
 
-    <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
 
-    <head>
-        <title>Online Library | Bookstore</title>
-    </head>
-    
-    <body>
-        <nav>
-            <div class="menu-icon">
-            </div>
-            <div class="logo">Digital Library | Bookstore</div>
-            <div class="buttons">
-
-              <button class="joinbtn"><a href="AdminPage.html">Back</a></button>
-          </div>
-        </nav>
-    
-        <div id="id01" class="modal">
-            <link rel="stylesheet" href="borrowBook1.css" />
-            <div id="book-box">
-                <div class="book-style">
-                    <h1>View Borrower/Buyer detail</h1>
-                    <br>
-                    <br>
-                    <div class="background">
-                        <img src="../src/images/libraryBook.jpg" style="max-width: 400%;">
-                    </div>
-                    <p>
-                        <br>
-    
-    
-                    </p>
-                </div>
-                <div class="input-data">
-                
-                        <br>
-                        <br>
-                        <div class="dropdown">
-                          <input type="submit" name="borrow" value="View users" />
-                    
-                          <div class="dropdown-content">
-                           
-                            <a href="user1.html">User 1</a>
-                            <a href="#">User 2</a>
-                            <a href="#">User 3</a>
-                          </div>
-                        </div>
-                  
-                   
-    
-                </div>
-            </div>
+<body>
+    <nav>
+        <div class="menu-icon">
         </div>
+        <div class="logo">Digital Library</div>
+    </nav>
 
-    
-  </body>
+    <link rel="stylesheet" href="buyerAndborrower.css" />
+    <div class="ViewRecordTable">
+        <h1>Borrowed Books of Digital Library store...</h1>
+
+        <div class="container mt-3" id="id01">
+            <table class="table table-dark text-white">
+                <thead>
+                    <th>Sno</th>
+                    <th>UserEmail</th>
+                    <th>bookid</th>
+                    <th>bookTitle</th>
+                </thead>
+                <tbody id="tbody1">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="ViewRecordTable">
+        <h1> Bought Books of Digital Library store...</h1>
+        <div class="container mt-3" id="id01">
+            <table class="table table-dark text-white">
+                <thead>
+                    <th>Sno</th>
+                    <th>UserEmail</th>
+                    <th>bookid</th>
+                    <th>bookTitle</th>
+                    <th>bookprice</th>
+                </thead>
+                <tbody id="tbody2">
+                </tbody>
+            </table>
+
+            <a href="AdminPage.html">
+                <input id="insert" type="submit" name="back" value="Back" />
+            </a>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+    <script id="MainScript">
+        //-----------------------------------------
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyDHJ_-ZQYPFVq7-NtsJXXMFKnga9dxGpVM",
+            authDomain: "library-20343.firebaseapp.com",
+            databaseURL: "https://library-20343-default-rtdb.firebaseio.com",
+            projectId: "library-20343",
+            storageBucket: "library-20343.appspot.com",
+            messagingSenderId: "212815264632",
+            appId: "1:212815264632:web:a934e86c5eb179e911e68d",
+            measurementId: "G-9EELX46W32"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+
+        //-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+        function SelectAllData() {
+            firebase.database().ref('BorrowedBooks').once('value',
+                function(snapshot) {
+                    snapshot.forEach(
+                        function(CurrentRecord) {
+                            var name = CurrentRecord.val().userEmail;
+                            var bookid = CurrentRecord.val().bookId;
+                            var booktitle = CurrentRecord.val().bookTitle;
+                            AddItemsToTable(name, bookid, booktitle);
+                            // console.log(bookid);
+                        }
+
+                    );
+                }
+            );
+        }
+
+
+
+        window.onload = SelectAllData();
+        // //-------------------------------------------------
+
+        var stdno = 0;
+
+        function AddItemsToTable(name, bookid, booktitle) {
+            var tbody = document.getElementById('tbody1');
+            var trow = document.createElement('tr');
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            var td4 = document.createElement('td');
+            td1.innerHTML = ++stdno;
+            td2.innerHTML = name;
+            td3.innerHTML = bookid;
+            td4.innerHTML = booktitle;
+            trow.appendChild(td1);
+            trow.appendChild(td2);
+            trow.appendChild(td3);
+            trow.appendChild(td4);
+            tbody.appendChild(trow);
+        }
+
+        /*----------------------------------------------------------*/
+        function SelectAllData1() {
+            firebase.database().ref('BoughtBooks').once('value',
+                function(snapshot) {
+                    snapshot.forEach(
+                        function(CurrentRecord) {
+                            var name1 = CurrentRecord.val().userEmail;
+                            var bookid1 = CurrentRecord.val().bookId;
+                            var price1 = CurrentRecord.val().BookPrice;
+                            var booktitle1 = CurrentRecord.val().bookTitle;
+                            AddItemsToTable1(name1, price1, bookid1, booktitle1);
+                            console.log(bookid1);
+                        }
+
+                    );
+                }
+            );
+        }
+
+
+
+        window.onload = SelectAllData1();
+        // //-------------------------------------------------
+
+        var stdno = 0;
+
+        function AddItemsToTable1(name1, price1, bookid1, booktitle1) {
+            var tbody = document.getElementById('tbody2');
+            var trow = document.createElement('tr');
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            var td4 = document.createElement('td');
+            var td5 = document.createElement('td');
+            td1.innerHTML = ++stdno;
+            td2.innerHTML = name1;
+            td3.innerHTML = bookid1;
+            td4.innerHTML = booktitle1;
+            td5.innerHTML = price1;
+            trow.appendChild(td1);
+            trow.appendChild(td2);
+            trow.appendChild(td3);
+            trow.appendChild(td4);
+            trow.appendChild(td5);
+            tbody.appendChild(trow);
+        }
+    </script>
+
+</body>
+
+
 </html>
