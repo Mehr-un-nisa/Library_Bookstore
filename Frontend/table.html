@@ -1,130 +1,126 @@
 <<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Firebase table</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class="menu-icon">
-        </div>
-        <div class="logo">Digital Library</div>
+      <div class="menu-icon"></div>
+      <div class="logo">Digital Library</div>
     </nav>
 
     <link rel="stylesheet" href="table.css" />
     <div class="ViewRecordTable">
-        <h1>Available Books of Digital Library store..... </h1>
+      <h1>Available Books in library | Bookstore</h1>
 
+      <div class="container mt-3" id="id01">
+        <table class="table table-dark text-white">
+          <thead>
+            <th>Sno</th>
+            <th>AuthorName</th>
+            <th>BookPrice</th>
+            <th>bookid</th>
+            <th>bookTitle</th>
+          </thead>
+          <tbody id="tbody1"></tbody>
+        </table>
 
-
-        <div class="container mt-3" id="id01">
-            <table class="table table-dark text-white">
-                <thead>
-                    <th>Sno</th>
-                    <th>AuthorName</th>
-                    <th>BookPrice</th>
-                    <th>bookid</th>
-                    <th>bookTitle</th>
-                </thead>
-                <tbody id="tbody1">
-                </tbody>
-            </table>
-
-            <a href="adminManageBooks.html">
-                <input id="insert" type="submit" name="back" value="Back" />
-            </a>
-        </div>
-        <a href="AddBook.html">
-            <input id="select" type="submit" name="Manage Books" value="Manage Books" />
+        <a href="adminManageBooks.html">
+          <input id="insert" type="submit" name="back" value="Back" />
         </a>
+      </div>
+      <a href="AddBook.html">
+        <input
+          id="select"
+          type="submit"
+          name="Manage Books"
+          value="Manage Books"
+        />
+      </a>
     </div>
-
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
 
     <script id="MainScript">
-        //-----------------------------------------
+      //-----------------------------------------
 
-        var firebaseConfig = {
-            apiKey: "AIzaSyDHJ_-ZQYPFVq7-NtsJXXMFKnga9dxGpVM",
-            authDomain: "library-20343.firebaseapp.com",
-            databaseURL: "https://library-20343-default-rtdb.firebaseio.com",
-            projectId: "library-20343",
-            storageBucket: "library-20343.appspot.com",
-            messagingSenderId: "212815264632",
-            appId: "1:212815264632:web:a934e86c5eb179e911e68d",
-            measurementId: "G-9EELX46W32"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+      var firebaseConfig = {
+        apiKey: "AIzaSyDHJ_-ZQYPFVq7-NtsJXXMFKnga9dxGpVM",
+        authDomain: "library-20343.firebaseapp.com",
+        databaseURL: "https://library-20343-default-rtdb.firebaseio.com",
+        projectId: "library-20343",
+        storageBucket: "library-20343.appspot.com",
+        messagingSenderId: "212815264632",
+        appId: "1:212815264632:web:a934e86c5eb179e911e68d",
+        measurementId: "G-9EELX46W32",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
 
+      //-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-        //-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+      function SelectAllData() {
+        firebase
+          .database()
+          .ref("AddBook")
+          .once("value", function (snapshot) {
+            snapshot.forEach(function (CurrentRecord) {
+              var name = CurrentRecord.val().AuthorName;
+              var bookprice = CurrentRecord.val().BookPrice;
+              var bookid = CurrentRecord.val().bookId;
+              var booktitle = CurrentRecord.val().bookTitle;
+              AddItemsToTable(name, bookprice, bookid, booktitle);
+              console.log(bookid);
+            });
+          });
+      }
+      // var firebaseRef = firebase.database().ref('AddBook');
 
-        function SelectAllData() {
-            firebase.database().ref('AddBook').once('value',
-                function(snapshot) {
-                    snapshot.forEach(
-                        function(CurrentRecord) {
-                            var name = CurrentRecord.val().AuthorName;
-                            var bookprice = CurrentRecord.val().BookPrice;
-                            var bookid = CurrentRecord.val().bookId;
-                            var booktitle = CurrentRecord.val().bookTitle;
-                            AddItemsToTable(name, bookprice, bookid, booktitle);
-                            console.log(bookid);
-                        }
+      // firebaseRef.on("value",
+      //     function(snapshot) {
+      //         snapshot.forEach(function(element) {
+      //             console.log(element.key);
+      //         });
+      //     })
 
-                    );
-                }
-            );
-        }
-        // var firebaseRef = firebase.database().ref('AddBook');
+      window.onload = SelectAllData();
+      // //-------------------------------------------------
 
+      var stdno = 0;
 
-        // firebaseRef.on("value",
-        //     function(snapshot) {
-        //         snapshot.forEach(function(element) {
-        //             console.log(element.key);
-        //         });
-        //     })
-
-
-
-        window.onload = SelectAllData();
-        // //-------------------------------------------------
-
-        var stdno = 0;
-
-        function AddItemsToTable(name, bookprice, bookid, booktitle) {
-            var tbody = document.getElementById('tbody1');
-            var trow = document.createElement('tr');
-            var td1 = document.createElement('td');
-            var td2 = document.createElement('td');
-            var td3 = document.createElement('td');
-            var td4 = document.createElement('td');
-            var td5 = document.createElement('td');
-            td1.innerHTML = ++stdno;
-            td2.innerHTML = name;
-            td3.innerHTML = bookprice;
-            td4.innerHTML = bookid;
-            td5.innerHTML = booktitle;
-            trow.appendChild(td1);
-            trow.appendChild(td2);
-            trow.appendChild(td3);
-            trow.appendChild(td4);
-            trow.appendChild(td5);
-            tbody.appendChild(trow);
-        }
+      function AddItemsToTable(name, bookprice, bookid, booktitle) {
+        var tbody = document.getElementById("tbody1");
+        var trow = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+        var td4 = document.createElement("td");
+        var td5 = document.createElement("td");
+        td1.innerHTML = ++stdno;
+        td2.innerHTML = name;
+        td3.innerHTML = bookprice;
+        td4.innerHTML = bookid;
+        td5.innerHTML = booktitle;
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        trow.appendChild(td5);
+        tbody.appendChild(trow);
+      }
     </script>
-</body>
-
-
+  </body>
 </html>

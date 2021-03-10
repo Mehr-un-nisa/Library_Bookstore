@@ -32,3 +32,17 @@ nav .logo {
 #firebaseui-auth-container {
   margin-top: 20%;
 }
+.Backbutton {
+  color: white;
+
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 520;
+  width: 90px;
+  height: 44px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  transition: 0.1s ease;
+  cursor: pointer;
+  margin-left: 10px;
+}

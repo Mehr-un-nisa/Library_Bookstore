@@ -68,8 +68,8 @@ nav .joinbtn {
   margin-left: 10px;
 }
 nav .loginbtn {
-  color: black;
-  background: #ffffff;
+  color: white;
+  background: black;
   border-radius: 4px;
   font-size: 16px;
   font-weight: 520;
@@ -83,7 +83,7 @@ nav .loginbtn {
 }
 nav .loginbtn a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 nav .loginbtn:hover,
 .loginbtn:focus,
@@ -148,6 +148,7 @@ input[type="submit"]:active {
   line-height: 57px;
   color: #ffffff;
   margin-top: 5%;
+  letter-spacing: 18px;
 }
 
 .input-icons i {
@@ -164,9 +165,10 @@ input[type="submit"]:active {
   width: 120%;
   height: 54px;
   background: black;
-  border-radius: 0 6px 6px 0;
+  border-radius: 6px 6px 6px 6px;
   font-size: 17px;
-  font-weight: 520;
+  font-weight: 20px;
+  font-family: sans-serif;
 }
 #search-opt {
   margin-top: 230px;
