@@ -65,6 +65,14 @@ h1 {
   font-size: 28px;
   font-family: sans-serif;
   font-weight: bold;
+  padding-top: 3em;
+  text-align: center;
+  margin-left: -60px;
+}
+h2 {
+  font-size: 28px;
+  font-family: sans-serif;
+  font-weight: bold;
   padding-top: 1em;
   text-align: center;
   margin-left: -60px;
@@ -128,6 +136,6 @@ input[type="submit"]:active {
 }
 .arrow{
   width: 25px; 
-  margin-left: 6%;
-  margin-bottom: -13%;
+  margin-left: -50%;
+  margin-bottom: -9%;
 }
