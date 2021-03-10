@@ -39,7 +39,7 @@ nav .logo {
   position: relative;
   margin: 5% auto;
   width: 600px;
-  height: 650px;
+  height: 600px;
   left: 3%;
   margin-top: 12%;
   border: black;
@@ -65,7 +65,7 @@ h1 {
   font-size: 28px;
   font-family: sans-serif;
   font-weight: bold;
-  padding-top: 2em;
+  padding-top: 1em;
   text-align: center;
   margin-left: -60px;
 }
@@ -124,4 +124,10 @@ input[type="submit"]:active {
 
 .heading {
   text-align: center;
+  margin-left: 2px;
+}
+.arrow{
+  width: 25px; 
+  margin-left: 6%;
+  margin-bottom: -13%;
 }

@@ -49,7 +49,7 @@ nav form button {
 }
 nav .logo {
   font-size: 40px;
-  margin-left: -1000px;
+  margin-left: -700px;
   font-weight: 700;
   color: black;
 }
@@ -126,6 +126,10 @@ input[type="submit"]:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
 
 .background {
   background-image: url(https://images.unsplash.com/photo-1502485019198-a625bd53ceb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
@@ -148,7 +152,7 @@ input[type="submit"]:active {
   line-height: 57px;
   color: #ffffff;
   margin-top: 5%;
-  letter-spacing: 18px;
+  letter-spacing: 5px;
 }
 
 .input-icons i {

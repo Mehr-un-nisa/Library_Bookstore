@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +22,12 @@
     <link rel="stylesheet" href="table.css" />
     <div class="ViewRecordTable">
       <h1>Available Books in library | Bookstore</h1>
-
+      <a href="adminManageBooks.html">
+        <img class="arrow" src="../src/images/arrow.png"/>
+      </a>
+      <a href="AddBook.html">
+        <input id="select" type="submit" name="Manage Books" value="Manage Books"/>
+      </a>
       <div class="container mt-3" id="id01">
         <table class="table table-dark text-white">
           <thead>
@@ -35,19 +39,7 @@
           </thead>
           <tbody id="tbody1"></tbody>
         </table>
-
-        <a href="adminManageBooks.html">
-          <input id="insert" type="submit" name="back" value="Back" />
-        </a>
       </div>
-      <a href="AddBook.html">
-        <input
-          id="select"
-          type="submit"
-          name="Manage Books"
-          value="Manage Books"
-        />
-      </a>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>

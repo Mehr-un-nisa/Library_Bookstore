@@ -33,6 +33,15 @@ nav .logo {
   margin-top: 8%;
   background-clip: content-box;
 }
+.ViewRecordTable .arrow{
+  width: 25px; 
+  margin-left: 10%; 
+  margin-top: 0.5%; 
+  margin-bottom: 1%;
+}
+.ViewRecordTable a{
+  text-decoration: none;
+}
 
 h1 {
   margin: 0 0 20px 0;
@@ -40,7 +49,7 @@ h1 {
   font-size: 34px;
   padding-top: 25px;
   padding-left: 9.5em;
-  padding-bottom: 7%;
+  padding-bottom: 1.5%;
   padding-right: 10em;
   text-align: center;
   background-clip: content-box;
@@ -114,7 +123,7 @@ body {
 
 input[type="submit"] {
   width: 12%;
-  height: 8%;
+  height: 40px;
   background: black;
   border: none;
   border-radius: 6px 6px 6px 6px;
@@ -124,8 +133,8 @@ input[type="submit"] {
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
-  margin-top: 31.5%;
-  margin-right: 9%;
+  margin-left: 32%;
+  margin-bottom: 2%;
 }
 
 input[type="submit"]:hover,
